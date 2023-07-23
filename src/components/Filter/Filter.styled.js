@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
 export const Input = styled.input`
-  padding: 10px;
-  font-size: 24px;
-  border-radius: 6px;
-  border: none;
-  outline: 0;
-  background-color: #fff;
-  box-shadow: 0 1px 6px 0 #20212447;
+  min-height: 40px;
+  max-width: 30%;
+  padding: 0px 5px;
+  margin: 5px 0 0 70px;
+  border-radius: 10px;
+  border: 1.5px solid black;
+  font-size: 20px;
+  background-color: transparent;
+`;
+
+export const TextFilter = styled.p`
+ margin: 20px 0 0 70px;
+ max-width: 30%;
 `;
 

@@ -1,0 +1,27 @@
+import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
+
+export const AuthNavWrap = styled.div` 
+  margin-left: auto;
+`;
+
+export const AuthNavLink = styled(NavLink)` 
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #2a363b;
+   transition: color 250ms linear;
+
+  &:hover,
+  &:focus {
+    color: #ffffff;
+  }
+
+  &.active {
+    color: #ffffff;
+    background-color: #523a0e;
+    border-radius: 7px;
+  }
+`;

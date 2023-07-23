@@ -1,5 +1,5 @@
 import { nanoid } from '@reduxjs/toolkit';
-import {Input, Button,Text} from './ContactForm.styled';
+import {Input, Button,Text, Form, Label} from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operations';
 import { selectContacts } from 'redux/selectors';
@@ -33,8 +33,8 @@ export const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>
+        <Form onSubmit={handleSubmit}>
+            <Label>
                 <Text>Name</Text>
                 <Input
                     type="text"
@@ -43,9 +43,9 @@ export const ContactForm = () => {
                     title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
                     required
                 />
-            </label>
+            </Label>
 
-            <label>
+            <Label>
                 <Text>Number</Text>
                 <Input
                     type="tel"
@@ -54,9 +54,9 @@ export const ContactForm = () => {
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
                     />
-            </label>
+            </Label>
                 
             <Button type="submit">Add contact</Button>
-        </form>
+        </Form>
     );
 }

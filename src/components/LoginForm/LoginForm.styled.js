@@ -16,8 +16,8 @@ export const Input = styled.input`
   padding: 0px 5px;
   border-radius: 10px;
   border: 1.5px solid black;
-  font-size: 20px;
-  background-color: transparent;
+    font-size: 20px;
+    background-color: transparent;
 `;
 
 export const Button = styled.button`
@@ -26,18 +26,14 @@ export const Button = styled.button`
   padding: 10px;
   font-weight: 700;
   font-size: 18px;
-  color: #000000;
+  color: #ffffff;
+  background-color: #523a0e;
   border-radius: 7px;
-  border: 1.5px solid #000000;
-  background-color: transparent;
-  transition: color 250ms linear;
+  border: none;
+  transition: border 250ms linear;
 
   &:hover,
   &:focus {
-    color: #ffffff;
+    border: 2px solid black;
   }
-`;
-
-export const Text = styled.p`
-  font-size: 24px;
 `;
