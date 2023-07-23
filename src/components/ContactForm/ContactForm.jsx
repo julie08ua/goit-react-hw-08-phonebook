@@ -15,7 +15,7 @@ export const ContactForm = () => {
 
         const contact = {
             name: name.value,
-            phone: number.value,
+            number: number.value,
             id: nanoid(),
         };
 

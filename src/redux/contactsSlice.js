@@ -11,28 +11,28 @@ const handlePending = (state) => {
     state.isLoading = true;
 };
 
-const handleRejected = ({ isLoading, error }, { payload }) => {
-    isLoading = false;
-    error = payload;
+const handleRejected = (state, { payload }) => {
+    state.isLoading = false;
+    state.error = payload;
 };
 
-const handleFulfilledFetch = ({ items, isLoading, error }, { payload }) => {
-    items = payload;
-    isLoading = false;
-    error = null;
+const handleFulfilledFetch = (state, { payload }) => {
+    state.items = payload;
+    state.isLoading = false;
+    state.error = null;
 };
 
-const handleFulfilledAdd = ({ items, isLoading, error }, { payload }) => {
-    isLoading = false;
-    error = null;
-    items.push(payload);
+const handleFulfilledAdd = (state, { payload }) => {
+    state.isLoading = false;
+    state.error = null;
+    state.items.push(payload);
 };
 
-const handleFulfilledDelete = ({ items, isLoading, error }, { payload }) => {
-    isLoading = false;
-    error = null;
-    const index = items.findIndex(contact => contact.id === payload.id);
-    items.splice(index, 1)
+const handleFulfilledDelete = (state, { payload }) => {
+    state.isLoading = false;
+    state.error = null;
+    const index = state.items.findIndex(contact => contact.id === payload.id);
+    state.items.splice(index, 1)
 };
 
 const contactsSlice = createSlice({

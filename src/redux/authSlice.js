@@ -8,30 +8,30 @@ const initialState = {
   isRefreshing: false,
 };
 
-const handleFulfilled = ({user,token,isLoggedIn}, {payload}) => {
-    user = payload.user;
-    token = payload.token;
-    isLoggedIn = true;
+const handleFulfilled = (state, {payload}) => {
+    state.user = payload.user;
+    state.token = payload.token;
+    state.isLoggedIn = true;
 };
     
-const handleFulfilledLogOut = ({user,token,isLoggedIn}) => {
-    user = { name: null, email: null };
-    token = null;
-    isLoggedIn = false;
+const handleFulfilledLogOut = (state) => {
+    state.user = { name: null, email: null };
+    state.token = null;
+    state.isLoggedIn = false;
 };
 
-const handlePendingRefreshUser = ({isRefreshing}) => {
-    isRefreshing = true;
+const handlePendingRefreshUser = (state) => {
+    state.isRefreshing = true;
 };
 
-const handleFulfilledRefreshUser = ({user, isLoggedIn, isRefreshing}, {payload}) => {
-    user = payload;
-    isLoggedIn = true;
-    isRefreshing = false;
+const handleFulfilledRefreshUser = (state, {payload}) => {
+    state.user = payload;
+    state.isLoggedIn = true;
+    state.isRefreshing = false;
 };
 
-const handleRejectedRefreshUser = ({isRefreshing}) => {
-    isRefreshing = false;
+const handleRejectedRefreshUser = (state) => {
+    state.isRefreshing = false;
 };
 
 const authSlice = createSlice({
